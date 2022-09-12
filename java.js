@@ -36,7 +36,13 @@ function playRound() {
 function game() {
   for (let i = 0; i <= 5; i++) {
     if (i === 5) {
-      console.log(`Game Over. Final score: Player:${playerScore}, Computer:${computerScore}`);
+      if (playerScore > computerScore) {
+        console.log(`Game Over. You Win!! Final score: Player:${playerScore}, Computer:${computerScore}`);
+      } else if (playerScore < computerScore) {
+        console.log(`Game Over. You Lose!! Final score: Player:${playerScore}, Computer:${computerScore}`);
+      } else if (playerScore === computerScore) {
+        console.log(`Game Over. Tie game!! Final score: Player:${playerScore}, Computer:${computerScore}`);
+      }
     } else {
       playRound()
     }
